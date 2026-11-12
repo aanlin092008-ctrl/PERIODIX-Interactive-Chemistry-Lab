@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PERIODIX | Explore Chemistry</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <h1>PERIOD<span>IX</span></h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#periodic-table">Periodic Table</a>
+            <a href="#trends">Periodic Trends</a>
+            <a href="#games">Game Zone</a>
+        </nav>
+    </header>
+
+    <main class="hero">
+        <p class="tagline">YOUR INTERACTIVE CHEMISTRY UNIVERSE</p>
+
+        <h2>Explore the World<br>
+            of <span>Elements.</span>
+        </h2>
+
+        <p class="description">
+            Discover elements, explore atomic structures,
+            understand periodic trends and challenge your
+            chemistry knowledge.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#periodic-table" class="primary-btn">
+                Explore Elements
+            </a>
+            <a href="#games" class="secondary-btn">
+                Play & Learn
+            </a>
+        </div>
+
+        <div class="stats">
+            <div>
+                <h3>118</h3>
+                <p>Elements</p>
+            </div>
+            <div>
+                <h3>7</h3>
+                <p>Periods</p>
+            </div>
+            <div>
+                <h3>18</h3>
+                <p>Groups</p>
+            </div>
+        </div>
+    </main>
+
+    <section id="periodic-table">
+    <h2>Periodic Table Explorer</h2>
+    <p>Choose an element to explore its properties.</p>
+
+    <input
+        type="text"
+        id="element-search"
+        placeholder="Search by element name or symbol..."
+    >
+
+    <div class="periodic-table-grid" id="periodic-table-grid"></div>
+
+    <div id="element-info" class="element-info">
+        <h2>Select an Element</h2>
+        <p>Your selected element's information will appear here.</p>
+    </div>
+</section>
+
+    <section id="trends">
+    <p class="section-kicker">TEST YOUR UNDERSTANDING</p>
+    <h2>⚡ Periodic Trends Lab</h2>
+    <p>Enter Trend Quest and test your chemistry knowledge!</p>
+
+    <div class="trend-game">
+        <div class="trend-heading">
+            <span>PERIODIX GAME ZONE</span>
+            <h3>🎮 Trend Quest</h3>
+            <p>Choose the element with the higher property.</p>
+        </div>
+
+        <label for="trend-property">Choose your challenge:</label>
+
+        <select id="trend-property">
+            <option value="radius">Atomic Radius</option>
+            <option value="ionization">Ionization Energy</option>
+            <option value="electronegativity">Electronegativity</option>
+        </select>
+
+        <div class="trend-score">
+            ⭐ Score: <span id="trend-score">0</span>
+        </div>
+
+        <div id="trend-question" class="trend-question">
+            Ready to test your knowledge?
+        </div>
+
+        <div id="trend-options" class="trend-options"></div>
+
+        <div id="trend-feedback" class="trend-feedback">
+            Select a challenge and press Start!
+        </div>
+
+        <button id="start-trend" class="trend-button">
+            Start Challenge
+        </button>
+
+        <button id="next-trend" class="trend-button" hidden>
+            Next Question →
+        </button>
+    </div>
+</section>
+
+
+<section id="trend-vision" class="feature-section">
+    <p class="section-kicker">SEE THE PATTERN • UNDERSTAND THE REASON</p>
+    <h2>Trend Vision</h2>
+    <p>Explore how periodic properties change across a period and down a group.</p>
+
+    <div class="vision-panel">
+        <div class="vision-controls">
+            <label for="vision-property">Choose a periodic property</label>
+            <select id="vision-property">
+                <option value="radius">Atomic radius</option>
+                <option value="ionization">First ionization energy</option>
+                <option value="electronegativity">Electronegativity</option>
+            </select>
+            <div class="direction-buttons">
+                <button class="direction-btn active" data-direction="across">Across a period →</button>
+                <button class="direction-btn" data-direction="down">Down a group ↓</button>
+            </div>
+        </div>
+
+        <div class="trend-visual" id="trend-visual">
+            <div class="visual-caption" id="visual-caption">Atomic radius generally decreases from left to right.</div>
+            <div class="trend-arrow-wrap">
+                <div class="trend-arrow" id="trend-arrow">←</div>
+                <span id="arrow-label">Property generally increases this way</span>
+            </div>
+            <div class="mini-period" id="mini-period" aria-label="Simplified Period 3 trend map"></div>
+            <div class="trend-explanation" id="trend-explanation"></div>
+        </div>
+        <p class="science-note">These are general trends, not unbreakable rules. Some elements show exceptions, and electronegativity is usually not assigned to noble gases.</p>
+    </div>
+</section>
+
+<section id="compare" class="feature-section">
+    <p class="section-kicker">SIDE-BY-SIDE CHEMISTRY</p>
+    <h2>Element Comparison Lab</h2>
+    <p>Choose two elements and compare their key properties.</p>
+    <div class="compare-panel">
+        <div class="compare-selectors">
+            <label>Element A
+                <select id="compare-a"></select>
+            </label>
+            <span class="versus">VS</span>
+            <label>Element B
+                <select id="compare-b"></select>
+            </label>
+        </div>
+        <div id="comparison-results" class="comparison-results" aria-live="polite"></div>
+        <p class="science-note">Values are approximate reference values for learning. Atomic radius depends on how it is measured.</p>
+    </div>
+</section>
+
+<section id="molecule-studio" class="feature-section">
+    <p class="section-kicker">MOLECULES MADE VISIBLE</p>
+    <h2>Molecule Studio</h2>
+    <p>Explore familiar molecules through simple structural models.</p>
+    <div class="molecule-panel">
+        <label for="molecule-choice">Choose a molecule</label>
+        <select id="molecule-choice">
+            <option value="water">Water — H₂O</option>
+            <option value="carbon-dioxide">Carbon dioxide — CO₂</option>
+            <option value="methane">Methane — CH₄</option>
+            <option value="ammonia">Ammonia — NH₃</option>
+        </select>
+        <div class="molecule-display">
+            <div id="molecule-diagram" class="molecule-diagram" aria-label="Molecular structure diagram"></div>
+            <div class="molecule-details">
+                <h3 id="molecule-name">Water (H₂O)</h3>
+                <p id="molecule-description">One oxygen atom is bonded to two hydrogen atoms. The molecule has a bent shape.</p>
+                <p><strong>Formula:</strong> <span id="molecule-formula">H₂O</span></p>
+                <p><strong>Shape:</strong> <span id="molecule-shape">Bent</span></p>
+                <p><strong>Bonding:</strong> <span id="molecule-bonding">Two polar covalent O–H bonds</span></p>
+            </div>
+        </div>
+        <p class="science-note">Schematic learning models only; atom sizes and bond lengths are not to scale.</p>
+    </div>
+</section>
+
+<section id="games" class="feature-section">
+    <p class="section-kicker">PLAY • RECALL • LEVEL UP</p>
+    <h2>PERIODIX Game Zone</h2>
+    <p>Try a quick element-identity challenge.</p>
+    <div class="guess-panel">
+        <div class="game-topline"><span>ELEMENT DETECTIVE</span><span>⭐ Best score: <strong id="guess-best">0</strong></span></div>
+        <div class="guess-score">Score: <strong id="guess-score">0</strong></div>
+        <div id="guess-clue" class="guess-clue">Press Start to reveal your first clue.</div>
+        <div id="guess-options" class="guess-options"></div>
+        <p id="guess-feedback" class="guess-feedback" aria-live="polite">Can you identify the element?</p>
+        <button id="guess-start" class="feature-button">Start Game</button>
+        <button id="guess-next" class="feature-button" hidden>Next Question</button>
+    </div>
+    <div class="progress-panel">
+        <h3>Your PERIODIX progress</h3>
+        <p>Correct answers in Element Detective are saved on this browser.</p>
+        <div class="progress-track"><div id="guess-progress-fill"></div></div>
+        <p id="guess-progress-label">0 correct answers saved</p>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <strong>PERIODIX</strong>
+    <p>Explore elements. See patterns. Learn chemistry.</p>
+    <a href="#">Back to top ↑</a>
+</footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
+<script src="script.js" defer></script>
+</body>
+</html>

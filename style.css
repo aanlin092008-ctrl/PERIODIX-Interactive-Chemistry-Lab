@@ -1,0 +1,572 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #080b12;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 8%;
+    border-bottom: 1px solid #20283a;
+}
+
+.navbar h1 {
+    font-size: 30px;
+    letter-spacing: 2px;
+}
+
+.navbar h1 span {
+    color: #38bdf8;
+}
+
+nav a {
+    color: #b8c3d9;
+    text-decoration: none;
+    margin-left: 25px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #38bdf8;
+}
+
+.hero {
+    text-align: center;
+    padding: 110px 20px 70px;
+}
+
+.tagline {
+    color: #38bdf8;
+    letter-spacing: 4px;
+    font-size: 12px;
+    margin-bottom: 25px;
+}
+
+.hero h2 {
+    font-size: clamp(42px, 7vw, 76px);
+    line-height: 1.15;
+}
+
+.hero h2 span {
+    color: #38bdf8;
+}
+
+.description {
+    color: #9caac0;
+    max-width: 600px;
+    margin: 25px auto;
+    line-height: 1.8;
+}
+
+.hero-buttons {
+    margin: 35px 0;
+}
+
+.hero-buttons a {
+    display: inline-block;
+    padding: 15px 25px;
+    margin: 8px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.primary-btn {
+    background: #38bdf8;
+    color: #080b12;
+}
+
+.secondary-btn {
+    border: 1px solid #38bdf8;
+    color: #38bdf8;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    margin-top: 65px;
+}
+
+.stats h3 {
+    color: #38bdf8;
+    font-size: 32px;
+}
+
+.stats p {
+    color: #9caac0;
+    margin-top: 8px;
+}
+
+section {
+    padding: 80px 8%;
+    text-align: center;
+    border-top: 1px solid #20283a;
+}
+
+section h2 {
+    color: #38bdf8;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+section p {
+    color: #9caac0;
+}
+/* PERIODIC TABLE */
+
+.periodic-table-grid {
+    display: grid;
+    grid-template-columns: repeat(18, minmax(48px, 1fr));
+    gap: 5px;
+    margin-top: 35px;
+    overflow-x: auto;
+    padding: 10px 0;
+}
+
+.element {
+    min-width: 48px;
+    min-height: 65px;
+    padding: 5px;
+    border: 1px solid #334155;
+    border-radius: 7px;
+    background: #111827;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.element:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px #38bdf8;
+    border-color: #38bdf8;
+}
+
+.element .number {
+    display: block;
+    font-size: 10px;
+    text-align: left;
+    color: #9caac0;
+}
+
+.element .symbol {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 4px 0;
+}
+
+.element .name {
+    display: block;
+    font-size: 9px;
+    overflow-wrap: anywhere;
+}
+
+/* Element categories */
+
+.alkali { border-color: #fb7185; }
+.alkaline { border-color: #fbbf24; }
+.transition { border-color: #38bdf8; }
+.post-transition { border-color: #94a3b8; }
+.metalloid { border-color: #a78bfa; }
+.nonmetal { border-color: #34d399; }
+.halogen { border-color: #f97316; }
+.noble { border-color: #e879f9; }
+.lanthanide { border-color: #22d3ee; }
+.actinide { border-color: #c084fc; }
+
+/* Selected element */
+
+.element.selected {
+    background: #243b55;
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 18px #38bdf8;
+}
+
+/* Search box */
+
+#element-search {
+    width: min(100%, 450px);
+    padding: 14px;
+    margin-top: 25px;
+    background: #111827;
+    color: white;
+    border: 1px solid #38bdf8;
+    border-radius: 8px;
+    outline: none;
+    font-size: 15px;
+}
+
+/* Element information */
+
+.element-info {
+    margin: 40px auto 0;
+    max-width: 650px;
+    padding: 30px;
+    background: #111827;
+    border: 1px solid #334155;
+    border-radius: 15px;
+    text-align: left;
+    line-height: 2;
+}
+
+.element-info h2 {
+    color: #38bdf8;
+}
+
+.element-info p {
+    color: #cbd5e1;
+}
+/* ELEMENT PROFILE UPGRADE */
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.big-element {
+    width: 130px;
+    min-height: 130px;
+    padding: 12px;
+    background: #172A42;
+    border: 2px solid #38bdf8;
+    border-radius: 14px;
+    text-align: center;
+}
+
+.big-element span {
+    display: block;
+    text-align: left;
+    font-size: 13px;
+    color: #94a3b8;
+}
+
+.big-element h1 {
+    font-size: 48px;
+    color: #38bdf8;
+}
+
+.big-element p {
+    font-size: 13px;
+}
+
+.profile-title h2 {
+    margin-bottom: 8px;
+}
+
+.profile-title p {
+    color: #38bdf8;
+    text-transform: capitalize;
+    margin-bottom: 8px;
+}
+
+.profile-title span {
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+.property-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.property-card {
+    background: #172033;
+    padding: 18px;
+    border-radius: 10px;
+    border: 1px solid #334155;
+}
+
+.property-card small {
+    color: #94a3b8;
+}
+
+.property-card h3 {
+    color: #38bdf8;
+    margin-top: 8px;
+    font-size: 24px;
+}
+
+.profile-note {
+    margin-top: 25px;
+    padding: 20px;
+    background: #172033;
+    border-radius: 10px;
+}
+
+.profile-note h3 {
+    color: #38bdf8;
+    margin-bottom: 10px;
+}
+
+.profile-note p {
+    line-height: 1.7;
+}
+.atom-section {
+    margin-top: 30px;
+    padding: 20px;
+    background: #080b12;
+    border: 1px solid #334155;
+    border-radius: 12px;
+}
+
+.atom-section h3 {
+    color: #38bdf8;
+    margin-bottom: 10px;
+}
+
+.atom-section p,
+.atom-section small {
+    color: #94a3b8;
+}
+
+#atom-canvas {
+    width: 100%;
+    min-height: 350px;
+    margin: 15px auto;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+#atom-canvas canvas {
+    display: block;
+    width: 100%;
+}
+#atom-canvas canvas {
+    touch-action: none;
+    cursor: grab;
+}
+/* PERIODIX TREND QUEST */
+
+.trend-game {
+    max-width: 750px;
+    margin: 30px auto;
+    padding: 25px;
+    background: #0b1120;
+    border: 1px solid #334155;
+    border-radius: 18px;
+    color: white;
+    box-shadow: 0 0 25px rgba(56, 189, 248, 0.08);
+}
+
+.trend-heading {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.trend-heading span {
+    color: #38bdf8;
+    letter-spacing: 3px;
+    font-size: 12px;
+}
+
+.trend-heading h3 {
+    font-size: 28px;
+    margin: 12px 0;
+}
+
+.trend-game label {
+    display: block;
+    margin-bottom: 10px;
+    color: #cbd5e1;
+}
+
+#trend-property {
+    width: 100%;
+    padding: 13px;
+    background: #172033;
+    color: white;
+    border: 1px solid #38bdf8;
+    border-radius: 9px;
+    font-size: 16px;
+}
+
+.trend-score {
+    margin: 22px 0;
+    color: #fbbf24;
+    font-size: 18px;
+    text-align: right;
+}
+
+.trend-question {
+    padding: 25px;
+    background: #172033;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 18px;
+}
+
+.trend-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.trend-option {
+    padding: 18px;
+    background: #1e293b;
+    color: white;
+    border: 1px solid #475569;
+    border-radius: 10px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.trend-option:hover:not(:disabled) {
+    border-color: #38bdf8;
+    background: #263b55;
+}
+
+.trend-option:disabled {
+    cursor: default;
+    opacity: 0.8;
+}
+
+.trend-feedback {
+    min-height: 55px;
+    padding: 15px 5px;
+    line-height: 1.6;
+    color: #cbd5e1;
+}
+
+.trend-button {
+    padding: 13px 22px;
+    margin: 8px 8px 0 0;
+    background: #0284c7;
+    color: white;
+    border: none;
+    border-radius: 9px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.trend-button:hover {
+    background: #0369a1;
+}
+
+@media (max-width: 500px) {
+    .trend-options {
+        grid-template-columns: 1fr;
+    }
+
+    .trend-game {
+        padding: 16px;
+    }
+}
+
+/* ==========================================================
+   PERIODIX FEATURE UPGRADE
+   ========================================================== */
+section.feature-section { padding-top: 75px; padding-bottom: 75px; }
+.section-kicker { color: #38bdf8 !important; font-size: 11px; letter-spacing: 3px; margin-bottom: 12px; }
+.vision-panel, .compare-panel, .molecule-panel, .guess-panel, .progress-panel {
+    max-width: 900px; margin: 28px auto 0; padding: 26px;
+    background: linear-gradient(145deg, #101a2b, #0b1120);
+    border: 1px solid #26364d; border-radius: 18px; text-align: left;
+}
+.vision-controls label, .molecule-panel label, .compare-selectors label {
+    display: block; color: #cbd5e1; font-size: 14px; margin-bottom: 10px;
+}
+.vision-controls select, .molecule-panel select, .compare-selectors select {
+    width: 100%; padding: 13px; background: #172033; color: white;
+    border: 1px solid #38bdf8; border-radius: 9px; font-size: 15px;
+}
+.direction-buttons { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
+.direction-btn, .feature-button {
+    padding: 12px 17px; border: 1px solid #36516c; border-radius: 9px;
+    background: #172033; color: #dbeafe; cursor: pointer; font-weight: 700;
+}
+.direction-btn.active, .direction-btn:hover, .feature-button:hover {
+    background: #0c4a6e; border-color: #38bdf8; color: white;
+}
+.trend-visual { margin-top: 24px; padding: 22px; border-radius: 14px; background: #080f1c; }
+.visual-caption { font-size: 19px; font-weight: 700; text-align: center; color: #f1f5f9; }
+.trend-arrow-wrap { display: flex; align-items: center; justify-content: center; gap: 14px; margin: 20px 0; color: #7dd3fc; flex-wrap: wrap; }
+.trend-arrow { font-size: 54px; line-height: 1; font-weight: 800; }
+#arrow-label { font-size: 14px; }
+.mini-period { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 7px; }
+.mini-element { min-height: 64px; border: 1px solid #3b536d; border-radius: 8px; color: white; background: #172033; cursor: pointer; }
+.mini-element strong, .mini-element small { display: block; }
+.mini-element strong { font-size: 18px; }
+.mini-element small { font-size: 9px; color: #cbd5e1; }
+.mini-element:hover { outline: 2px solid #38bdf8; transform: translateY(-2px); }
+.trend-explanation { margin-top: 20px; padding: 18px; border-left: 3px solid #38bdf8; background: #111c2e; border-radius: 8px; line-height: 1.7; }
+.trend-explanation strong { color: #7dd3fc; }
+.trend-explanation p { margin-top: 7px; color: #d1d9e6; }
+.science-note { margin-top: 17px; font-size: 12px; line-height: 1.6; color: #94a3b8 !important; }
+.compare-selectors { display: grid; grid-template-columns: 1fr auto 1fr; align-items: end; gap: 15px; }
+.versus { color: #38bdf8; font-weight: 900; padding-bottom: 13px; }
+.comparison-results { margin-top: 25px; overflow: hidden; border: 1px solid #2c4059; border-radius: 12px; }
+.comparison-heading, .comparison-row { display: grid; grid-template-columns: 1fr 1.25fr 1fr; gap: 10px; padding: 14px 10px; text-align: center; align-items: center; }
+.comparison-heading { background: #172b43; color: #7dd3fc; font-size: 12px; letter-spacing: 1px; }
+.comparison-row { border-top: 1px solid #26364d; color: #dbeafe; font-size: 13px; }
+.comparison-row span { color: #94a3b8; }
+.comparison-row strong { overflow-wrap: anywhere; }
+.molecule-display { display: grid; grid-template-columns: minmax(220px, 1fr) minmax(220px, 1fr); gap: 22px; align-items: center; margin-top: 20px; }
+.molecule-diagram { min-height: 220px; display: grid; place-items: center; background: #080f1c; border: 1px solid #253750; border-radius: 13px; }
+.molecule-diagram svg { width: 100%; max-width: 360px; }
+.molecule-diagram line { stroke: #a5b4fc; stroke-width: 5; stroke-linecap: round; }
+.molecule-diagram .atom { stroke: #e2e8f0; stroke-width: 2; }
+.molecule-diagram .oxygen { fill: #ef4444; }
+.molecule-diagram .hydrogen { fill: #e2e8f0; }
+.molecule-diagram .carbon { fill: #475569; }
+.molecule-diagram .nitrogen { fill: #2563eb; }
+.molecule-diagram .lone-pair { fill: #a78bfa; }
+.molecule-diagram text { fill: #fff; text-anchor: middle; font: bold 17px Arial, sans-serif; }
+.molecule-details h3 { color: #7dd3fc; margin-bottom: 10px; font-size: 23px; }
+.molecule-details p { margin: 9px 0; line-height: 1.6; color: #cbd5e1; }
+.molecule-details strong { color: #fff; }
+.game-topline { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; color: #7dd3fc; font-size: 12px; letter-spacing: 1px; }
+.guess-score { text-align: right; color: #fbbf24; margin: 16px 0; }
+.guess-clue { padding: 22px; border-radius: 12px; background: #172033; text-align: center; font-size: 19px; line-height: 1.5; }
+.guess-options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px; }
+.guess-option { padding: 15px; background: #1e293b; border: 1px solid #475569; color: white; border-radius: 9px; cursor: pointer; }
+.guess-option:hover:not(:disabled) { border-color: #38bdf8; }
+.guess-option:disabled { cursor: default; opacity: .85; }
+.guess-option.correct { border-color: #34d399; background: #064e3b; }
+.guess-option.incorrect { border-color: #fb7185; background: #4c1d2a; }
+.guess-feedback { min-height: 42px; padding: 14px 0; line-height: 1.5; color: #cbd5e1 !important; }
+.feature-button { background: #0369a1; border: 0; color: white; margin-top: 8px; }
+.progress-panel { max-width: 900px; padding: 20px 26px; }
+.progress-panel h3 { color: #7dd3fc; margin-bottom: 8px; }
+.progress-panel p { font-size: 13px; line-height: 1.5; }
+.progress-track { height: 9px; background: #25344a; border-radius: 20px; overflow: hidden; margin: 14px 0 8px; }
+#guess-progress-fill { width: 0; height: 100%; background: #38bdf8; border-radius: inherit; transition: width .3s; }
+.site-footer { padding: 35px 8%; text-align: center; border-top: 1px solid #20283a; background: #060910; }
+.site-footer strong { color: #38bdf8; letter-spacing: 3px; font-size: 20px; }
+.site-footer p { margin: 10px 0; color: #94a3b8; }
+.site-footer a { color: #7dd3fc; text-decoration: none; font-size: 13px; }
+@media (max-width: 760px) {
+    .navbar { flex-direction: column; gap: 15px; padding: 20px 5%; }
+    .navbar nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+    nav a { margin: 0; font-size: 13px; }
+    .stats { gap: 35px; }
+    .mini-period { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .molecule-display { grid-template-columns: 1fr; }
+}
+@media (max-width: 520px) {
+    section { padding-left: 5%; padding-right: 5%; }
+    .vision-panel, .compare-panel, .molecule-panel, .guess-panel { padding: 16px; }
+    .compare-selectors { grid-template-columns: 1fr; }
+    .versus { text-align: center; padding: 0; }
+    .comparison-heading, .comparison-row { grid-template-columns: 1fr 1.1fr 1fr; font-size: 11px; }
+    .guess-options { grid-template-columns: 1fr; }
+    .mini-element { min-height: 56px; }
+}
